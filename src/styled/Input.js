@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import Location from './Location'
 import Guests from './Guests'
@@ -43,11 +43,6 @@ const Input1 = styled.div`
 
 
 
-const SearchBox = styled.div`
-  display: flex;
-  justify-content:space-around;
-  
-`;
 const Button = styled.div`
   width: 127px;
   height: 48px;
@@ -84,8 +79,8 @@ export default function Input({state,setState,setDisplay}) {
         </SearchContainer>
        
         <div>
-          {slide == 1 && <Location parent={setState} />}
-          {slide == 2 && <Guests parent={setState} />}
+          {slide === 1 && <Location parent={setState} />}
+          {slide === 2 && <Guests parent={setState} />}
         </div>
       </>
     );
