@@ -26,64 +26,41 @@ gap:10px;
 export default function Location({ parent }) {
   const [stayd, setStayd] = useState([]);
   var stay = stays.stays;
-   
+
   useEffect(() => {
     const s = new Set();
     stay.map((m) => {
       var place = `${m.city},${m.country}`;
       if (s.has(place) === false) {
         s.add(place);
-        
       }
       return m;
     });
     const arr = Array.from(s);
     setStayd(arr);
-  
-
-
-    
-
-  }, [])
-  
- 
-  
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div>
-   
-      {
-        stayd.map(m => { 
-          return (
-            <Loc key={m} onClick={(e) => parent(prev => {
-              console.log(m)
-              return {
-                ...prev,
-                place: m,
-              };
-             })}>
-             <i class="fa-solid fa-location-dot"></i>
-              <div >{m}</div>
-            </Loc>
-          )
-        })
-       
-       
-         
-          
-           
-          
-         
-             
-           
-            
-          
-      }
-       </div>
-      )
-      
-        
-   
-  
-
+      {stayd.map((m) => {
+        return (
+          <Loc
+            key={m}
+            onClick={(e) =>
+              parent((prev) => {
+                return {
+                  ...prev,
+                  place: m,
+                };
+              })
+            }
+          >
+            <i class="fa-solid fa-location-dot"></i>
+            <div>{m}</div>
+          </Loc>
+        );
+      })}
+    </div>
+  );
 }

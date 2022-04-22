@@ -47,7 +47,7 @@ const Container1 = styled.div`
   }
 `;
 export default function Container({ place }) {
-  console.log(place+"dfdfdfdf")
+
   return (
     <Container1>
       <Img>

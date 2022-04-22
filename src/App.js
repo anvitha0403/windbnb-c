@@ -39,8 +39,9 @@ function App() {
       console.log(b);
       setPlace(b);
     }
+    // eslint-disable-next-line
   }, [display]);
-   // eslint-disable-next-line
+
 
   return (
     <div className="App">

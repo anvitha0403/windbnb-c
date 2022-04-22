@@ -1,6 +1,5 @@
-import React,{useEffect,useState} from 'react'
+import React from 'react'
 import Counter from "./Counter"
-import styled from "styled-components"
 
 export default function Guests({parent}) {
   
